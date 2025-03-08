@@ -1,0 +1,36 @@
+{
+    "model_performance": {
+        "train_accuracy": 1.0,
+        "test_accuracy": 1.0
+    },
+    "sample_prediction": {
+        "input": {
+            "Temparature": 25,
+            "Humidity": 80,
+            "Moisture": 30,
+            "Soil_Type": "Loamy",
+            "Crop_Type": "Wheat",
+            "Nitrogen": 40,
+            "Potassium": 20,
+            "Phosphorous": 25
+        },
+        "predicted_fertilizer": "Potassium chloride",
+        "confidence": 1.0,
+        "probabilities": {
+            "10/10/2010": 0.0,
+            "10/26/2026": 0.0,
+            "14-14-14": 0.0,
+            "14-35-14": 0.0,
+            "15-15-15": 0.0,
+            "17-17-17": 0.0,
+            "20-20": 0.0,
+            "28-28": 0.0,
+            "DAP": 0.0,
+            "Potassium chloride": 1.0,
+            "Potassium sulfate.": 0.0,
+            "Superphosphate": 0.0,
+            "TSP": 0.0,
+            "Urea": 0.0
+        }
+    }
+}

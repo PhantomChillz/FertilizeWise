@@ -1,0 +1,38 @@
+<html>
+    <body>
+<div class="container text-center mt-5">
+    <h2>🌍 Live Weather & Map</h2>
+    
+    {% if weather %}
+        <h3>📍 {{ location.city }}, {{ location.country_name }}</h3>
+        <p>🌡 Temperature: {{ weather.main.temp }}°C</p>
+        <p>☁ Condition: {{ weather.weather.0.description }}</p>
+        <p>💧 Humidity: {{ weather.main.humidity }}%</p>
+        <p>💨 Wind Speed: {{ weather.wind.speed }} m/s</p>
+    {% else %}
+        <p class="text-danger">⚠ Failed to fetch weather data.</p>
+    {% endif %}
+
+    <!-- Leaflet Map -->
+    <div id="map" style="height: 500px; width: 100%; border-radius: 10px; margin-top: 20px;"></div>
+</div>
+
+<script>
+    var lat = {{ lat|default:0 }};
+    var lon = {{ lon|default:0 }};
+    
+    var map = L.map('map').setView([lat, lon], 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    
+    if (lat && lon) {
+        var marker = L.marker([lat, lon]).addTo(map)
+            .bindPopup("📍 {{ location.city }}").openPopup();
+    }
+
+    // Clickable Map Feature
+    map.on('click', function (e) {
+        window.location.href = ?lat=${e.latlng.lat}&lon=${e.latlng.lng};
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FertilizerWise - Recommendation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .result-card {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+        .result-card:hover {
+            transform: translateY(-5px);
+        }
+        .header {
+            background: linear-gradient(135deg, #28a745 0%, #208838 100%);
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+        }
+        .fertilizer-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #28a745;
+            margin: 20px 0;
+        }
+        .confidence {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+        .btn-back {
+            background-color: #6c757d;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+        .fertilizer-description {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            color: #495057;
+            line-height: 1.6;
+        }
+        .buy-link {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .buy-link:hover {
+            background-color: #218838;
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="result-card">
+            <div class="header text-white text-center">
+                <h2 class="mb-0">Recommended Fertilizer</h2>
+            </div>
+            <div class="card-body text-center p-4">
+                <div class="fertilizer-name">
+                    {{ predicted_fertilizer }}
+                </div>
+                <div class="fertilizer-description">
+                    {{ data.Description }}
+                </div>
+                <a href="{{ data.Best_Buyer_Link }}" class="buy-link" target="_blank">
+                    Buy Now <i class="fas fa-external-link-alt"></i>
+                </a>
+                <div class="mt-4">
+                    <a href="{% url 'predict' %}" class="btn btn-back text-white">
+                        Make Another Prediction
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html> 
