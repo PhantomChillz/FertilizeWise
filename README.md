@@ -58,14 +58,11 @@ The system uses an SQLite database containing predefined soil types, weather con
 
 ## API Endpoints
 FertilizeWise also provides API endpoints for external integration:
-- `GET /api/recommendation/` - Fetch fertilizer suggestions based on query parameters.
-- `POST /api/predict/` - Submit input data to receive fertilizer recommendations.
+- `GET /predict/` - Fetch fertilizer suggestions based on query parameters.
+- `POST /predict/` - Submit input data to receive fertilizer recommendations.
 
 ## Contributing
 Contributions are welcome! Feel free to fork this repository, create a new branch, and submit a pull request.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 For any issues or inquiries, reach out via email or open an issue on GitHub.
