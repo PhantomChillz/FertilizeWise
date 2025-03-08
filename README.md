@@ -56,11 +56,6 @@ The system uses an SQLite database containing predefined soil types, weather con
 - Trained on a dataset featuring various soil conditions, weather parameters, and crop-fertilizer relationships.
 - Predicts the most suitable fertilizer based on user input.
 
-## API Endpoints
-FertilizeWise also provides API endpoints for external integration:
-- `GET /predict/` - Fetch fertilizer suggestions based on query parameters.
-- `POST /predict/` - Submit input data to receive fertilizer recommendations.
-
 ## Contributing
 Contributions are welcome! Feel free to fork this repository, create a new branch, and submit a pull request.
 
