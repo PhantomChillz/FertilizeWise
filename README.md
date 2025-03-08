@@ -68,6 +68,8 @@ Contributions are welcome! Feel free to fork this repository, create a new branc
 For any issues or inquiries, reach out via email or open an issue on GitHub.
 
 ---
-### Author
-[PhantomChillz](https://github.com/PhantomChillz)
-
+### Authors
+[Akshay Rushi](https://github.com/PhantomChillz)
+[Harshitha Gummadi](https://github.com/Harshitha9407)
+[Akshay Reddy Kalem](https://github.com/A-R-K-7)
+[Sri bala Tejesh](https://github.com/SRIBALATEJESH)
