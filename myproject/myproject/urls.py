@@ -21,6 +21,6 @@ from myapp.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('predict/', predict_view, name="predict"),
-    path("", weather_view, name="weather_home"),
+    path("", index, name="index"),
     # path('get_moisture/',get_moisture, name='get_moisture'),-
 ]

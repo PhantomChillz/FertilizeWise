@@ -12,69 +12,10 @@ from myapp.MainModel import predict_fertilizer
 import requests
 import json
 from django.http import JsonResponse
-from .services import fetch_weather, fetch_location
 from .NPK import get_npk_values
-from .models import WeatherPrediction  # Import the model
-
-# def predict_view(request):
-#     if request.method == 'POST':
-#         # Get input data from form
-#         input_data = {
-#             'Temparature': int(request.POST.get('temperature')),
-#             'Humidity': int(request.POST.get('humidity')),
-#             'Moisture': int(request.POST.get('moisture')),
-#             'Soil_Type': request.POST.get('soil_type'),
-#             'Crop_Type': request.POST.get('crop_type'),
-#             'Nitrogen': int(request.POST.get('nitrogen')),
-#             'Potassium': int(request.POST.get('potassium')),
-#             'Phosphorous': int(request.POST.get('phosphorous'))
-#         }
-
-#         # Make prediction using the model
-#         predicted_fertilizer,confidence_score, explanation = predict_fertilizer(input_data)
-#         data = Fertilizers.objects.get(Fertilizer_Name=predicted_fertilizer)
-#         print(data.Description)
-#         context = {
-#             'data':data,
-#             'predicted_fertilizer': predicted_fertilizer,
-#             'confidence_score':confidence_score,
-#             'explanation':explanation
-#         }
-        
-#         return render(request, 'model_output.html', context)
-
-#     return render(request, 'input_form.html')
-WEATHER_API_KEY = "56231c4405fb01884adcd1e961ee46d9"
-GEO_API_KEY = "0227097bc71b17fbadd5b971c15d9820"
-
-def get_weather(lat, lon):
-    """ Fetch weather details from OpenWeatherMap API """
-    url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={WEATHER_API_KEY}&units=metric"
-    response = requests.get(url)
-    return response.json() if response.status_code == 200 else None
-
-def get_ip_location():
-    """ Get user's location based on IP address """
-    url = f"https://ipapi.co/json/?key={GEO_API_KEY}"
-    response = requests.get(url)
-    return response.json() if response.status_code == 200 else None
-
-def weather_view(request):
-    """ Main view to display weather and map """
-    location = get_ip_location()
-    
-    if location:
-        lat, lon = location["latitude"], location["longitude"]
-        weather = get_weather(lat, lon)
-    else:
-        lat, lon, weather = None, None, None
-    
-    return render(request, "index.html", {
-        "location": location,
-        "weather": weather,
-        "lat": lat,
-        "lon": lon
-    })
+from .models import WeatherPrediction
+def index(request):
+    return render(request,"index.html")
 def get_weather_data(latitude, longitude):
     """Fetch weather details from Open-Meteo API"""
     url = f"https://api.open-meteo.com/v1/forecast?latitude={latitude}&longitude={longitude}&current=temperature_2m,relative_humidity_2m,dew_point_2m,apparent_temperature,pressure_msl,wind_speed_10m,weather_code"
