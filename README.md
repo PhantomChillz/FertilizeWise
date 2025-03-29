@@ -64,7 +64,7 @@ For any issues or inquiries, reach out via email or open an issue on GitHub.
 
 ---
 ### Authors
-[Akshay Rushi](https://github.com/PhantomChillz)
-[Harshitha Gummadi](https://github.com/Harshitha9407)
-[Akshay Reddy Kalem](https://github.com/A-R-K-7)
-[Sri bala Tejesh](https://github.com/SRIBALATEJESH)
+1. [G.R.S. Akshay Rushi](https://github.com/PhantomChillz)
+2. [K. Akshay Reddy](https://github.com/A-R-K-7)
+3. [G. Harshitha](https://github.com/Harshitha9407)
+4. [I. Sri Bala Tejesh](https://github.com/SRIBALATEJESH)
